@@ -1,0 +1,193 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+---
+<Layout title="马拉松等级查询 - 产品故事">
+  <div class="container">
+    <a href="/openclaw/" class="back">← 返回产品列表</a>
+    <h1>🏃 马拉松等级查询</h1>
+    <div class="meta">微信小程序 · 已发布 v1.1.9</div>
+    
+    <div class="content">
+      <h2>💡 项目起源</h2>
+      <p>作为一个跑步爱好者，每次跑完马拉松都好奇自己的成绩在什么水平。中国田协有大众选手等级标准，但查起来不太方便——于是就有了做这个小工具的想法。</p>
+      
+      <h2>🎯 核心功能</h2>
+      <p>输入性别、年龄段和完赛成绩，自动计算对应等级：</p>
+      <div class="highlight">
+        🏆 精英级 · 🥇 一级 · 🥈 二级 · 🥉 三级
+      </div>
+      
+      <h2>🛠️ 技术栈</h2>
+      <ul>
+        <li>微信小程序原生开发</li>
+        <li>微信云开发（数据存储）</li>
+        <li>miniprogram-ci 自动化部署</li>
+      </ul>
+      
+      <h2>📱 界面设计</h2>
+      <p>界面遵循简洁直观原则：</p>
+      <ul>
+        <li>性别选择：直观图标切换</li>
+        <li>年龄段：标准区间划分</li>
+        <li>成绩输入：时/分/秒分离输入</li>
+        <li>结果展示：等级徽章 + 达标情况</li>
+      </ul>
+      
+      <h2>🔄 迭代历程</h2>
+      
+      <div class="version">
+        <h3>v1.0.0 - 基础功能</h3>
+        <ul>
+          <li>实现核心查询逻辑</li>
+          <li>接入中国田协等级标准数据</li>
+          <li>完成基础界面</li>
+        </ul>
+      </div>
+      
+      <div class="version">
+        <h3>v1.1.x - 细节优化</h3>
+        <ul>
+          <li>年龄段自动匹配优化</li>
+          <li>增加未达标提示功能</li>
+          <li>输入体验改进</li>
+          <li>性能优化</li>
+        </ul>
+      </div>
+      
+      <h2>🐛 踩坑记录</h2>
+      <div class="pitfall">
+        <h4>1. 年龄段边界问题</h4>
+        <p>最初年龄段判断逻辑有漏洞，导致某些年龄查不到结果。后改为更精确的区间判断。</p>
+      </div>
+      
+      <div class="pitfall">
+        <h4>2. 输入为空时的提示</h4>
+        <p>用户未输入成绩时，需要清空之前的查询结果，避免误导。</p>
+      </div>
+      
+      <div class="pitfall">
+        <h4>3. 自动化部署</h4>
+        <p>使用 miniprogram-ci 时遇到登录态、代码包大小等问题，最后通过脚本化解决。</p>
+      </div>
+      
+      <h2>📊 数据与反馈</h2>
+      <p>上线后收到跑友反馈，主要需求集中在：</p>
+      <ul>
+        <li>更直观的等级展示</li>
+        <li>历史成绩记录功能（规划中）</li>
+        <li>更多赛事类型支持</li>
+      </ul>
+      
+      <h2>🚀 未来规划</h2>
+      <ul>
+        <li>增加成绩历史记录</li>
+        <li>支持更多赛事类型（半马、10K等）</li>
+        <li>数据可视化分析</li>
+      </ul>
+      
+      <h2>🔗 相关链接</h2>
+      <ul>
+        <li>源代码仓库：cutlady/marathon</li>
+        <li>小程序搜索：马拉松等级查询</li>
+      </ul>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .container { 
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 40px 20px; 
+    line-height: 1.8; 
+  }
+  .back { 
+    display: inline-block; 
+    color: #666; 
+    text-decoration: none; 
+    margin-bottom: 20px; 
+  }
+  .back:hover { color: #333; }
+  h1 { 
+    font-size: 2rem; 
+    margin-bottom: 16px; 
+    color: #1a1a1a; 
+  }
+  .meta { 
+    color: #666; 
+    margin-bottom: 40px; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid #e5e5e5; 
+  }
+  .content { 
+    background: white; 
+    border-radius: 16px; 
+    padding: 32px; 
+  }
+  .content h2 { 
+    font-size: 1.4rem; 
+    margin: 40px 0 20px; 
+    color: #1a1a1a;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e5e5;
+  }
+  .content h2:first-child { 
+    margin-top: 0; 
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .content h3 {
+    font-size: 1.1rem;
+    margin: 24px 0 12px;
+    color: #333;
+  }
+  .content h4 {
+    font-size: 1rem;
+    margin: 16px 0 8px;
+    color: #444;
+  }
+  .content p { 
+    margin-bottom: 16px; 
+    color: #444; 
+  }
+  .content ul {
+    margin-bottom: 16px;
+    padding-left: 24px;
+  }
+  .content li {
+    margin-bottom: 8px;
+    color: #444;
+  }
+  .highlight {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+    font-size: 1.1rem;
+  }
+  .version {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .version h3 {
+    margin-top: 0;
+    color: #1a1a1a;
+  }
+  .pitfall {
+    background: #fef3c7;
+    border-left: 4px solid #f59e0b;
+    padding: 16px 20px;
+    margin: 16px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .pitfall h4 {
+    margin-top: 0;
+    color: #92400e;
+  }
+  .pitfall p {
+    margin-bottom: 0;
+  }
+</style>

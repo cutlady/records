@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="产品故事">
+  <main class="container">
+    <header class="hero">
+      <h1>产品故事</h1>
+      <p>记录从想法到落地的全过程</p>
+    </header>
+    <section class="products">
+      <a href="/openclaw/products/marathon" class="product-card">
+        <div class="product-icon">🏃</div>
+        <h2>马拉松等级查询</h2>
+        <p>中国田协大众等级标准查询小程序</p>
+        <span class="status">已发布 v1.1.7</span>
+      </a>
+    </section>
+  </main>
+</Layout>
+<style>
+  .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+  .hero { text-align: center; margin-bottom: 60px; }
+  .hero h1 { font-size: 2.5rem; margin-bottom: 12px; color: #1a1a1a; }
+  .hero p { font-size: 1.1rem; color: #666; }
+  .products { display: grid; gap: 20px; }
+  .product-card {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+  .product-icon { font-size: 3rem; margin-bottom: 16px; }
+  .product-card h2 { font-size: 1.5rem; margin-bottom: 8px; color: #1a1a1a; }
+  .product-card p { color: #666; margin-bottom: 12px; line-height: 1.5; }
+  .status {
+    display: inline-block;
+    background: #10b981;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+</style>
